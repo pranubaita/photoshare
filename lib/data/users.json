@@ -1,0 +1,34 @@
+{
+    "test": {
+        "username": "test",
+        "email": "123@123.com",
+        "password_hash": "$2b$10$GesmS8EtCAP/SR/vdO/R.e5MP4fap1yyfXp99QnX9fiEiXEcK7U1K",
+        "first_name": "A",
+        "last_name": "A",
+        "bio": ""
+    },
+    "cazbrecker": {
+        "username": "cazbrecker",
+        "email": "fattyfong4@gmail.com",
+        "password_hash": "$2b$10$af2VrGNATzlIqG7uzbi5DuyKFUxSSIc.rcIHUi/b0vb.k5qrRmywS",
+        "first_name": "Caz",
+        "last_name": "Brecker",
+        "bio": "he/him"
+    },
+    "mummy": {
+        "username": "mummy",
+        "email": "mummy@gmail.com",
+        "password_hash": "$2b$10$kDYgKYMC7.TeZ8Zt9ziOOuq3Jkt/kUpxj/j1beLRGWXL1qVsV9dp.",
+        "first_name": "mummy",
+        "last_name": "mummy",
+        "bio": "My Mummy"
+    },
+    "lavpraj": {
+        "username": "lavpraj",
+        "email": "praju@gmail.com",
+        "password_hash": "$2b$10$DIxY3e1fIswzalMhrho4J.T2GEBqrJQ.cJSu3YjUmaYb2oQv6AKs.",
+        "first_name": "prajna",
+        "last_name": "mathaley",
+        "bio": ""
+    }
+}
