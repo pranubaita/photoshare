@@ -1,0 +1,32 @@
+<title>Login | PhotoShare</title>
+
+<div class="body-container">
+  <div id="login-wrapper">
+    <div class="section-wrapper">
+      <h2 class="logo">PhotoShare</h2>
+      <% if (error) { %>
+        <p> <%= error %> </p>
+      <% } %>
+        <form action="/login" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+<br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <button type="submit">Login</button>
+        </form>
+        <div>
+          <a style="text-align: center;" href="/forget">Forgot Password?</a>
+        </div>
+
+
+    </div>
+
+    <div class="section-wrapper">
+      <a style="text-align: center;" href="/register">Dont have an account? Register here.</a>
+    
+       
+
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<title>Register Account | PhotoShare</title>
+
+  <!-- These container elements are here to help you style the webpage. 
+  Feel free to replace them if you want to express your own style! -->
+<%= error %>
+
+<div class="body-container">
+  <div class="section-wrapper">
+    <h2 class="logo">PhotoShare</h2>
+    <form action="/register" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" required><br>
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Register</button>
+    </form>
+    
+  </div>
+</div>

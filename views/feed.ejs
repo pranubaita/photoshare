@@ -1,0 +1,8 @@
+<title>Feed | PhotoShare</title>
+<link rel="stylesheet" href="/stylesheets/feed.css">
+
+<div class="body-container">
+  <% for (let i = 0; i < imageData.length; i++) { %>
+    <%- include('partials/photo', { photoData: imageData[i] }) %>
+  <% } %>
+</div>

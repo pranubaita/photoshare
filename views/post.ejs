@@ -1,0 +1,52 @@
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title><%= photoData.caption %></title>
+                    <link rel="stylesheet" href="/stylesheets/styles.css">
+                </head>
+                <body>
+                <div class="container">
+                    <h1><%= photoData.caption %></h1>
+                    <img src="/post/img/<%= photoData.url %>" alt="<%= photoData.caption %>">
+                    <p>Posted by: <%= photoData.postedBy %></p>
+                    <p>Posted on: <%= new Date(photoData.time).toLocaleString() %></p>
+
+                    <!-- Like/Unlike button -->
+                    <form action="/post/<%= photoData.url %>/like" method="POST">
+                        <button type="submit">
+                            <%= photoData.likes.includes(session.user) ? "Unlike" : "Like" %>
+                        </button>
+                        <span><%= photoData.likes.length %> Likes</span>
+                    </form>
+
+                    <!-- Comments section -->
+                    <h2>Comments</h2>
+                    <ul>
+                        <% for (let comment of photoData.comments) { %>
+                            <li>
+                                <strong><%= comment.commenter %>:</strong> <%= comment.body %> 
+                                <em>(<%= new Date(comment.time_stamp).toLocaleString() %>)</em>
+                                <% if (comment.commenter === session.user) { %>
+                                    <form action="/post/<%= photoData.url %>/<%= comment.id %>/delete" method="POST" style="display:inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                <% } %>
+                            </li>
+                        <% } %>
+                    </ul>
+
+                    <!-- Comment submission form -->
+                    <form action="/post/<%= photoData.url %>" method="POST">
+                        <textarea name="comment" placeholder="Add a comment"></textarea>
+                        <button type="submit">Post Comment</button>
+                    </form>
+
+                    <!-- Back to profile -->
+                    <div>
+                        <a href="/profile/<%= photoData.postedBy %>">Back to Profile</a>
+                    </div>
+                </div>
+                </body>
+                </html>

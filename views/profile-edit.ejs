@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | PhotoShare</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <% if (error) { %>
+            <div class="error-message">
+                <p><%= error %></p>
+            </div>
+        <% } %>
+        
+        <form action="/profile/<%= profileData.username %>/edit" method="POST">
+            <div style="margin: 1.5em auto; width: fit-content;">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" value="<%= profileData.first_name %>" required>
+            </div>
+            <div style="margin: 1.5em auto; width: fit-content;">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" value="<%= profileData.last_name %>" required>
+            </div>
+            <div style="margin: 1.5em auto; width: fit-content;">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="4" cols="50"><%= profileData.bio %></textarea>
+            </div>
+            <div style="margin: 1.5em auto; width: fit-content;">
+                <button type="submit">Update Profile</button>
+            </div>
+        </form>
+        <div style="margin: 1.5em auto; width: fit-content;">
+            <a href="/profile/<%= profileData.username %>">Cancel</a>
+        </div>
+    </div>
+</body>
+</html>

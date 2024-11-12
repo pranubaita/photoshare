@@ -1,0 +1,49 @@
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title><%= profileData.username %> | PhotoShare</title>
+              <script src="/javascripts/script.js"></script>
+          </head>
+          <body>
+              <div class="body-container">
+                  <!-- Stage 5.2: Display user information -->
+                  <div class="user-info">
+                      <h1><%= profileData.username %></h1>
+                      <% if (profileData.bio) { %>
+                          <p>Bio: <%= profileData.bio %></p>
+                      <% } else { %>
+                          <p>No bio available.</p>
+                      <% } %>
+                      <!-- You can also display a profile picture here if available -->
+                      <% if (profileData.profilePictureUrl) { %>
+                          <img src="<%= profileData.profilePictureUrl %>" alt="<%= profileData.username %>'s profile picture" class="profile-picture">
+                      <% } %>
+                  </div>
+
+                  <!-- Stage 5.3: Show edit profile link if viewing own profile -->
+                  <% if (isCurrentUser) { %>
+                      <a href="/profile/<%= profileData.username %>/edit">Edit Profile</a>
+                  <% } %>
+              </div>
+
+              <!-- Stage 5.4: Display pictures in a grid -->
+              <div style="display: flex;">
+                  <div id="profile-wall" style="display: inline-grid; place-items: center; margin: auto;">
+                      <% for (let i = 0; i < profileData.posts.length; i++) { %>
+                          <% const post = profileData.posts[i]; %>
+                          <img
+                              class="user-photo"
+                              src="<%= '/post/img/' + post.url %>" 
+                                style="grid-column: <%= (i % 3) + 1 %>; grid-row: <%= Math.floor(i / 3) + 1 %>"
+                              alt="<%= post.caption %>"
+                              onclick="redirect('/post/<%= post.url %>')" >
+                              <!-- Stage 5.4.2: Correctly redirect on click -->
+                        
+                              <!-- Stage 5.4.1: Correctly set image URL -->
+                      <% } %>
+                  </div>
+              </div>
+          </body>
+          </html>

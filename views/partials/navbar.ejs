@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/stylesheets/navbar.css">
+<script src="/javascripts/script.js"></script>
+<header id="navbar-root">
+  <a href="/">
+    <h1 id="navbar-title" class="logo">PhotoShare</h1>
+  </a>
+  <div style="flex: 1 1 0;"></div>
+  <% if (loggedIn) { %>
+    <a href="/upload">
+      <button>+ New Post</button>
+    </a>
+    <button onclick="redirect('/logout')">Sign out</button>
+    <a href="/profile/<%= username %>" class="username">
+      <%= username %>
+    </a>
+  <% } %>
+</header>

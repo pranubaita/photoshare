@@ -1,0 +1,53 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0..1" rel="stylesheet" />
+<link rel="stylesheet" href="/stylesheets/photo.css" />
+
+<!-- Structure of the JSON that will be passed to this file -->
+<!-- photoData: {
+      url: string,
+      user: string,
+      caption: string,
+      time: number,
+      likes: array,
+      comments: array
+} -->
+
+<div class="section-wrapper">
+  <!-- View for a single photo post -->
+
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <div style="flex: 10; margin: 0.5em 0;">
+      <%= photoData.user %>
+    </div>
+    <% if (photoData.user === username) { %>
+      <form id="delete-post" method="post" action="/post/<%= photoData.url %>/delete" style="width: fit-content;">
+        <button class="delete" type="submit" title="Delete Post" style="background-color: white; color: red;">X</button>
+      </form>
+    <% } %>
+  </div>
+
+  <img src=" <%= " /post/img/" + photoData.url %> " >
+  <p>Caption: <%= photoData.caption %></p>
+
+  <!-- Comment Section -->
+  <div style="margin: 1.5em 0;">
+    <p>Comments:</p>
+    <% if (!photoData.comments || photoData.comments.length === 0) { %>
+      <p>Nothing here yet! Be the first to comment! 😊</p>
+    <% } else { %>
+      <% for (let i = 0; i < photoData.comments.length; i++) { %>
+        <% const commentData = photoData.comments[i]; %>
+        <div>
+          <p>Commenter: <a href="/profile/<%= commentData.commenter %>"><%= commentData.commenter %></a> - <%= commentData.body %></p>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+
+  <!-- Comment Input Form -->
+  <form method="post" action="/post/<%= photoData.url %>">
+    <div id="comment-submission">
+      <input id="comment-field" name="comment" placeholder="Add a comment..." autocomplete="off">
+      <button type="submit">Comment</button>
+    </div>
+  </form>
+</div>
