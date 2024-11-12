@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+.logo {
+  font-family: 'Grand Hotel', cursive;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: #FAFAFA;
+}
+
+a {
+  color: #00B7FF;
+}
+
+a.username {
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+.body-container {
+  margin: 2rem 2rem 2rem;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #BBB;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: 1px solid #777;
+}
+
+label {
+  padding: 2rem 0;
+}
+
+p.error {
+  color: red;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  font-weight: bold;
+  background-color: #0095f6;
+  color: white;
+  cursor: pointer;
+}
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+div.section-wrapper {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #DDD;
+  overflow: hidden;
+  max-width: 512px;
+}
+
+p {
+  margin-top: 0;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+.section-wrapper .logo {
+  font-size: 3em;
+  margin: 0 0 1rem 0;
+}
+
+img.photo {
+  width: calc(100% + 4rem);
+  min-width: 512px;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: 1rem;
+}
+
+.user-block {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}

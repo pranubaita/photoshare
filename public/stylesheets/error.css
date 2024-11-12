@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-container {
+  flex: 1 1 0;
+  justify-content: center;
+}
+
+#error-status {
+  font-size: 30vmin;
+  margin: 2rem 0 0 0;
+  line-height: 0.75em;
+}
+
+#error-message {
+  font-size: 10vmin;
+  margin: 0;
+  font-weight: normal;
+  height: min-content;
+  line-height: 1em;
+}
